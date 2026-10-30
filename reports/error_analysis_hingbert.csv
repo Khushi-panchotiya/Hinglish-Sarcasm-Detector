@@ -1,0 +1,31 @@
+raw_text,text,label,prediction,error_type,notes,suggested_type
+public ko q bhrka raha hai,public ko q bhrka raha hai,Sincere,Sarcastic,short-no-context,,short-no-context
+ye chutye bol kya raha hai ...,ye chutye bol kya raha hai ..,Sarcastic,Sincere,abuse/insult-only,,abuse/insult-only
+"Kehna kya chahte ho , Gaand jali he magar bata nahi sakte hena face_with_tears_of_joy","Kehna kya chahte ho , Gaand jali he magar bata nahi sakte hena face_with_tears_of_joy",Sincere,Sarcastic,emoji-laughter,,emoji-laughter
+apanee to deela ho gayaa hai hama to khataakhata khataakhata vaalaa masheena hee lenge rolling_on_the_floor_laughing,apanee to deela ho gayaa hai hama to khataakhata khataakhata vaalaa masheena hee lenge rolling_on_the_floor_laughing,Sincere,Sarcastic,emoji-laughter,,emoji-laughter
+डोक्यावर पडलेल्या मुली face_with_tears_of_joy face_with_tears_of_joy face_with_tears_of_joy,डोक्यावर पडलेल्या मुली face_with_tears_of_joy face_with_tears_of_joy face_with_tears_of_joy,Sincere,Sarcastic,other-language-script,,other-language-script
+Jo khaye kho jaye...or jo pee le tufan se bhi ladd jaye face_with_tears_of_joy face_with_tears_of_joy face_with_tears_of_joy,Jo khaye kho jaye..or jo pee le tufan se bhi ladd jaye face_with_tears_of_joy face_with_tears_of_joy face_with_tears_of_joy,Sincere,Sarcastic,emoji-laughter,,emoji-laughter
+Godi media ki jal rhi h face_with_tears_of_joy,Godi media ki jal rhi h face_with_tears_of_joy,Sincere,Sarcastic,political-context,,political-context
+fir sanvidhan khatre me kyo nahi aya?,fir sanvidhan khatre me kyo nahi aya?,Sarcastic,Sincere,political-context,,political-context
+Are bhend ke lavde tera record mere area ke Rocky kutte ne bhi tod rakha he kya baate chodrai tu jhaatu face_with_tears_of_joy,Are bhend ke lavde tera record mere area ke Rocky kutte ne bhi tod rakha he kya baate chodrai tu jhaatu face_with_tears_of_joy,Sincere,Sarcastic,abuse/insult-only,,abuse/insult-only
+Mullla adha bulla adha dimag face_with_tears_of_joy rolling_on_the_floor_laughing rolling_on_the_floor_laughing,Mulla adha bulla adha dimag face_with_tears_of_joy rolling_on_the_floor_laughing rolling_on_the_floor_laughing,Sincere,Sarcastic,emoji-laughter,,emoji-laughter
+yeh hai naye daur ka naye natak,yeh hai naye daur ka naye natak,Sarcastic,Sincere,short-no-context,,short-no-context
+Gravity rolling_on_the_floor_laughing rolling_on_the_floor_laughing rolling_on_the_floor_laughing kha gai,Gravity rolling_on_the_floor_laughing rolling_on_the_floor_laughing rolling_on_the_floor_laughing kha gai,Sincere,Sarcastic,emoji-laughter,,emoji-laughter
+to hume koun bola ki jaha kafir dikhe mar do ?,to hume koun bola ki jaha kafir dikhe mar do ?,Sincere,Sarcastic,political-context,,political-context
+Congres htao bjp lao check_mark_button check_mark_button,Congres htao bjp lao check_mark_button check_mark_button,Sarcastic,Sincere,political-context,,political-context
+Are lalchi log power m ane to do ..pregnant hote hi bacche nikal ate h kya kuch waqt do,Are lalchi log power m ane to do ..pregnant hote hi bacche nikal ate h kya kuch waqt do,Sincere,Sarcastic,subtle-irony,,subtle-irony
+aaisa dushman ki ma ki chut ekra beti k chodo mahavir wla,aaisa dushman ki ma ki chut ekra beti k chodo mahavir wla,Sarcastic,Sincere,label-noise?,,label-noise?
+1500 years old temple is property of 1300 year old Islamic Waqf Board face_with_tears_of_joy,1500 years old temple is property of 1300 year old Islamic Waqf Board face_with_tears_of_joy,Sarcastic,Sincere,political-context,,political-context
+saba loga saayonee ko eka-eka kara baaree baaree se lege chodege koee dhakkaa-mukkee nahee karegaa face_with_tears_of_joy,saba loga saayonee ko eka-eka kara baaree baaree se lege chodege koee dhakkaa-mukkee nahee karegaa face_with_tears_of_joy,Sincere,Sarcastic,abuse/insult-only,,abuse/insult-only
+sala itna bada jhootha he j?,sala itna bada jhootha he j?,Sarcastic,Sincere,short-no-context,,short-no-context
+chutiya banaya tumko fata fat fata fat clown_face,chutiya banaya tumko fata fat fata fat clown_face,Sincere,Sarcastic,abuse/insult-only,,abuse/insult-only
+Chodam patti challenge rage he face_with_tears_of_joy face_with_tears_of_joy face_with_tears_of_joy,Chodam patti challenge rage he face_with_tears_of_joy face_with_tears_of_joy face_with_tears_of_joy,Sarcastic,Sincere,emoji-laughter,,emoji-laughter
+BKL PAGAL BOLIGAND MULLE CHUTIYA MENTALITY KE LOG,BKL PAGAL BOLIGAND MULLE CHUTIYA MENTALITY KE LOG,Sincere,Sarcastic,abuse/insult-only,,abuse/insult-only
+bhai koi iske kan ke niche bjao .gjb gdha insan h or kuch ni milta h news me bolne ko,bhai koi iske kan ke niche bjao .gjb gdha insan h or kuch ni milta h news me bolne ko,Sarcastic,Sincere,abuse/insult-only,,abuse/insult-only
+eeski ma ki chutt bhain ki laudii ki,eeski ma ki chutt bhain ki laudii ki,Sarcastic,Sincere,label-noise?,,label-noise?
+aabe woo bhi tok ek hindu hai,aabe woo bhi tok ek hindu hai,Sincere,Sarcastic,political-context,,political-context
+bolte hai ki bap se panga mat le,bolte hai ki bap se panga mat le,Sincere,Sarcastic,short-no-context,,short-no-context
+kyonki dhruva raathee ko hindustaana se koee matalaba naheen hai use matalaba hai sirpha bhaajapaa se isa bhaajapaa ke khilaapha galata bola rahaa hai kyonki kaangresa se paise khaa rakhe hain moai moai moai,kyonki dhruva raathee ko hindustaana se koee matalaba naheen hai use matalaba hai sirpha bhaajapaa se isa bhaajapaa ke khilaapha galata bola rahaa hai kyonki kaangresa se paise khaa rakhe hain moai moai moai,Sarcastic,Sincere,political-context,,political-context
+jab koi bahana nahi hota to bolte hai 'server down hai',jab koi bahana nahi hota to bolte hai 'server down hai',Sincere,Sarcastic,subtle-irony,,subtle-irony
+nountain dew dar ki mkc check_mark_button,nountain dew dar ki mkc check_mark_button,Sarcastic,Sincere,label-noise?,,label-noise?
+Chinta nahi acchaa lagra hai face_with_tears_of_joy face_with_tears_of_joy apnaa Munna jitaa hai,Chinta nahi acchaa lagra hai face_with_tears_of_joy face_with_tears_of_joy apnaa Munna jitaa hai,Sincere,Sarcastic,emoji-laughter,,emoji-laughter

@@ -1,0 +1,15 @@
+{
+  "raw_rows": 8885,
+  "invalid_label_rows": 3,
+  "conflicting_duplicate_texts": 24,
+  "final_rows": 8464,
+  "class_counts": {
+    "Sincere": 4819,
+    "Sarcastic": 3645
+  },
+  "split_sizes": {
+    "train": 6771,
+    "validation": 846,
+    "test": 847
+  }
+}

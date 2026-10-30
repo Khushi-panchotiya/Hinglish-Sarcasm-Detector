@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.DS_Store
+*.pyc
+models/*/checkpoints/
+data/feedback.csv
+.ipynb_checkpoints/
+
+# Large transformer models hosted on Hugging Face
+models/hingbert/
+models/muril/
+models/xlmr/

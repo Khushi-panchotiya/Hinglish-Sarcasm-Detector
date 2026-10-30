@@ -1,0 +1,7 @@
+{
+  "model": "tfidf_lr_validation",
+  "accuracy": 0.6536643026004728,
+  "macro_precision": 0.6499441804626009,
+  "macro_recall": 0.6523414344991109,
+  "macro_f1": 0.6501324646325782
+}

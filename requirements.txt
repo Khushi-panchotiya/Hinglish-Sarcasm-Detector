@@ -1,0 +1,15 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+joblib
+emoji
+lime
+streamlit
+# only needed for fine-tuning / transformer inference (use a GPU machine, e.g. Colab/Kaggle):
+# torch
+# transformers
+# datasets
+# accelerate
+flask

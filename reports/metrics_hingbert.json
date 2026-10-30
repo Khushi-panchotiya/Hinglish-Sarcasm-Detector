@@ -1,0 +1,7 @@
+{
+  "model": "hingbert",
+  "accuracy": 0.6942148760330579,
+  "macro_precision": 0.6942966903073287,
+  "macro_recall": 0.6980759392940374,
+  "macro_f1": 0.6927742649272806
+}

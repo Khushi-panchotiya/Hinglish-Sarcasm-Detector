@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hinglish Sarcasm Detector</title>
+<style>
+  :root {
+    --bg: #f6f7fb; --card: #ffffff; --text: #1d2433; --muted: #6b7385; --border: #e1e5ee;
+    --sarcastic: #d9480f; --sarcastic-bg: #fff1e8; --sincere: #2b7a4b; --sincere-bg: #e9f7ef;
+    --accent: #3b5bdb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151c; --card: #1b1f29; --text: #e8ebf3; --muted: #98a0b3; --border: #2c3242;
+      --sarcastic: #ff9d6c; --sarcastic-bg: #3a2418; --sincere: #6fd49a; --sincere-bg: #17301f;
+      --accent: #7c93ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex; justify-content: center; padding: 32px 16px;
+  }
+  main { width: 100%; max-width: 640px; }
+  h1 { margin: 0 0 4px; font-size: 1.7rem; }
+  .sub { margin: 0 0 24px; color: var(--muted); }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+  textarea {
+    width: 100%; min-height: 100px; resize: vertical; padding: 12px; font: inherit;
+    color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
+  }
+  textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+  label.opt { color: var(--muted); font-size: .9rem; display: flex; gap: 6px; align-items: center; }
+  button.go {
+    background: var(--accent); color: #fff; border: 0; border-radius: 10px;
+    padding: 10px 22px; font: inherit; font-weight: 600; cursor: pointer;
+  }
+  button.go:disabled { opacity: .6; cursor: wait; }
+  .examples { margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; color: var(--muted); font-size: .85rem; }
+  .chip {
+    background: transparent; color: var(--text); border: 1px solid var(--border);
+    border-radius: 999px; padding: 5px 12px; font: inherit; font-size: .85rem; cursor: pointer;
+  }
+  .chip:hover { border-color: var(--accent); }
+  #result { margin-top: 20px; display: none; border-radius: 12px; padding: 18px; }
+  #result.sarcastic { background: var(--sarcastic-bg); color: var(--sarcastic); }
+  #result.sincere { background: var(--sincere-bg); color: var(--sincere); }
+  #result.error { background: var(--bg); color: var(--sarcastic); border: 1px solid var(--border); }
+  .label { font-size: 1.5rem; font-weight: 700; }
+  .bar { height: 8px; background: rgba(128,128,128,.25); border-radius: 99px; margin: 10px 0 4px; overflow: hidden; }
+  .bar > div { height: 100%; background: currentColor; border-radius: 99px; }
+  .meta { font-size: .85rem; color: var(--muted); }
+  .words { margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .w { padding: 2px 8px; border-radius: 6px; font-size: .85rem; color: var(--text); }
+  footer { margin-top: 20px; font-size: .8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<main>
+  <h1>🎭 Hinglish Sarcasm Detector</h1>
+  <p class="sub">Type a Hinglish comment and find out if it's <b>Sarcastic</b> or <b>Sincere</b>.</p>
+
+  <div class="card">
+    <textarea id="text" maxlength="500" placeholder="e.g. wah kya baat hai, bilkul time pe aaye"></textarea>
+    <div class="row">
+      <label class="opt"><input type="checkbox" id="explain" checked> Show influential words</label>
+      <button class="go" id="go">Detect</button>
+    </div>
+    <div class="examples">
+      Try:
+      <button class="chip">wah kya baat hai, bilkul time pe aaye</button>
+      <button class="chip">thanks yaar, time pe aaye, maza aa gaya</button>
+      <button class="chip">great, another Monday meeting, just what I wanted</button>
+    </div>
+    <div id="result" role="status" aria-live="polite"></div>
+  </div>
+  <footer>NLP mini project · Khushi Panchotiya (23BIT112) &amp; Grishma Makwana (23BIT108) · PDEU</footer>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+const box = $("text"), btn = $("go"), out = $("result");
+
+function show(cls, html) { out.className = cls; out.innerHTML = html; out.style.display = "block"; }
+const esc = s => s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+async function detect() {
+  const text = box.value.trim();
+  if (!text) { show("error", "Please type something first."); return; }
+  btn.disabled = true; btn.textContent = "Thinking…";
+  try {
+    const r = await fetch("/api/predict", {
+      method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({text, explain: $("explain").checked})
+    });
+    const d = await r.json();
+    if (!r.ok) { show("error", esc(d.error || "Something went wrong.")); return; }
+    const pct = Math.round(d.confidence * 100);
+    const icon = d.label === "Sarcastic" ? "😏" : "🙂";
+    let words = "";
+    if (d.words && d.words.length) {
+      words = '<div class="meta" style="margin-top:12px">Words that pushed the result (orange → Sarcastic, blue → Sincere)</div><div class="words">' +
+        d.words.map(([w, s]) => {
+          const a = Math.min(Math.abs(s) * 4 + 0.15, 0.85).toFixed(2);
+          const c = s > 0 ? "217,72,15" : "59,91,219";
+          return `<span class="w" style="background:rgba(${c},${a})">${esc(w)}</span>`;
+        }).join("") + "</div>";
+    }
+    show(d.label.toLowerCase(),
+      `<div class="label">${icon} ${d.label}</div>
+       <div class="bar"><div style="width:${pct}%"></div></div>
+       <div class="meta">Confidence ${pct}% · model: ${esc(d.model)}</div>${words}`);
+  } catch (e) {
+    show("error", "Could not reach the server.");
+  } finally {
+    btn.disabled = false; btn.textContent = "Detect";
+  }
+}
+btn.onclick = detect;
+box.addEventListener("keydown", e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) detect(); });
+document.querySelectorAll(".chip").forEach(c => c.onclick = () => { box.value = c.textContent; detect(); });
+</script>
+</body>
+</html>
